@@ -1,7 +1,7 @@
 version: '3'
 services:
   invite:
-    image: nyaone/invite
+    image: reg.nya.codes/nyaone/invite
     container_name: invite
     restart: unless-stopped
     volumes:

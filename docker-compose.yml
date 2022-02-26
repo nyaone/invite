@@ -1,0 +1,8 @@
+version: '3'
+services:
+  invite:
+    image: nyaone/invite
+    container_name: invite
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/invite/config.json:ro

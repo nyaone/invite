@@ -4,9 +4,11 @@ import WebSocket from 'ws';
 
 import config from "./config.js";
 
+let iName: string = '邀请喵';
+
 const helpHandler = async () => {
     return [
-      "邀请姬 使用帮助\n" +
+      `${iName} 使用帮助\n` +
       "指令 - 说明\n" +
       "-------------------\n" +
       "帮助 - 打印此条帮助信息\n" +
@@ -76,6 +78,7 @@ const commandHandler = async (text: string, user: string): Promise<string[]> => 
 
     const i = await cli.request('i', {}, config.misskey.token);
     console.log(`Identity confirm, I'm ${i.name}.`);
+    iName = i.name;
 
     stream.on('_connected_', () => {
         console.log(`Stream connected!`);
